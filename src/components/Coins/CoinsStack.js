@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import CoinsScreen from './CoinsScreen';
-import CoinsDetails from './CoinDetaillScreen';
+import CoinsDetails from './CoinsDetail/CoinDetaillScreen';
 import Colors from '../../res/colors';
 
 
@@ -15,7 +15,7 @@ const CoinsStack = () => {
         screenOptions={{
             headerTitleAlign: 'center',
             headerStyle: {
-                backgroundColor: Colors.charade,
+                backgroundColor: Colors.bkblack,
             },
             headerTintColor: Colors.white,
             shodowColors: Colors.charade,

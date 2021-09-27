@@ -1,9 +1,10 @@
+import colors from 'ansicolors';
 import React from 'react';
-import {View, StyleSheet, Text, Image } from 'react-native';
+import {View, StyleSheet, Pressable, Text, Image } from 'react-native';
 
 import Colors from '../../res/colors';
 
-const CoinsCart = ({item}) => {
+const CoinsCart = ({item, onPress}) => {
 
    const getImagea = () =>{
         if(item.percent_change_1h > 0){
@@ -15,8 +16,10 @@ const CoinsCart = ({item}) => {
 
     } 
 
+
+
     return (
-    <View style={S.container}>
+    <Pressable onPress={onPress} style={S.container}>
         <View>
             <View style={S.row}>
                 <Text style={S.symbol}> {item.symbol}</Text>
@@ -34,7 +37,7 @@ const CoinsCart = ({item}) => {
                     source={getImagea()}
                 />
         </View>
-    </View>
+    </Pressable>
     )
 }
 
@@ -43,26 +46,29 @@ const S = StyleSheet.create({
         flexDirection: "row",
         padding: 10,
         justifyContent: "space-between",
+        borderBottomColor: Colors.charade,
+        borderBottomWidth: 1,
+        paddingLeft: Platform.OS == 'ios' ? 16 : 6,
     },
     row: {
         flexDirection: "row",
     },
     name: {
-        color: Colors.zircon,
+        color: Colors.bkblack,
         fontSize: 14
     },
     symbol: {
-        color: Colors.White2,
+        color: Colors.bkblack,
         fontWeight: "bold",
         fontSize: 16,
         marginRight: 12
     },
     perc:{
         fontSize: 12,
-        color: Colors.white,
+        color: Colors.bkblack,
     },
     price:{
-        color: Colors.white,
+        color: Colors.bkblack,
 
     },
     img: {

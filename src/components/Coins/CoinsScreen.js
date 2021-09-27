@@ -15,14 +15,16 @@ class CoinsScreen extends Component {
 
     componentDidMount = async () =>{
         this.setState({loading: true });
+
         const res = await Http.instance.get("https://api.coinlore.net/api/tickers/");
         
         this.setState({coins: res.data, loading: false });
     }
 
-    handlepress= () =>{
-        this.props.navigation.navigate('CoinsDetails');
+    handlepress= (coin) =>{
+        this.props.navigation.navigate('CoinsDetails', { coin });
     }
+
 
     render(){
 
@@ -30,12 +32,12 @@ class CoinsScreen extends Component {
 
         return(
             <View style={S.container}>
-                { loading ? <ActivityIndicator color="#000" size="large" /> : null}
+                { loading ? <ActivityIndicator style={S.loading} color="#000" size="large" /> : null}
                 <FlatList
                 style={S.flat}
                 data={coins}
                 renderItem={({item}) => 
-                <CoinsCart item={item} />
+                <CoinsCart item={item} onPress={() => this.handlepress(item)}/>
                 } />
             </View>
         );
@@ -45,9 +47,12 @@ class CoinsScreen extends Component {
 const S = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: Colors.bkblack,
-        color:Colors.zircon,
+        backgroundColor: Colors.white,
+        color:Colors.bkblack,
     },
+    loading: {
+        marginTop: 50,
+    }
 })
 
 export default CoinsScreen;
