@@ -19,7 +19,7 @@ const S = StyleSheet.create({
         maxWidth: 150,
         maxHeight: 150,
         padding: 14,
-        backgroundColor: Colors.Blue,
+        backgroundColor: Colors.charade,
         margin: 10,
         borderRadius: 5,
         borderWidth:1,

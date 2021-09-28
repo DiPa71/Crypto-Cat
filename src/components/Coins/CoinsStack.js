@@ -19,6 +19,7 @@ const CoinsStack = () => {
             },
             headerTintColor: Colors.white,
             shodowColors: Colors.charade,
+            
         }}
         >
 
