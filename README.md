@@ -17,7 +17,9 @@ when you click on the cryptos you can watch the stats for the current crypto tha
 Here you can add or remove the current cryptos to your favorite page.
 
 ![Favorite](notfavorite.png)
+#
 ![Remove](confirm-remove.png)
+#
 ![FavoriteTab](favorites.png)
 
 
