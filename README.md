@@ -28,4 +28,4 @@ Here you can add or remove the current cryptos to your favorite page.
 - Remove the bug of the library local storage where sometimes it doesn't add to favorites the current cryptos
 - Splash screen
 - empty favorite list styles
-- ios app vertion
+- ios app version
